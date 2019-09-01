@@ -30,7 +30,7 @@ __Note__: Since truffle root dir is on repo root dir, the following parameters w
   test_directory: "./eth-contracts/test/",
 ```
 
-## Deployment
+## Deployment on Rinkeby
 
 - __Verifier__ (0x8a13E530Bf3D26D5D64d7c5562a2D32CB769C39b), created on tx: 0xf20e11304c192d5af6032ca7a10c358010910a1f5966589d0f04d6eb4912db6c
 - __PlatinumERC721Token__ (0xD0c75A4B8Ba44F75D715daA431A172AcD17A6cbc) created on tx: 0x203032d2109c6407aebd4d8db20dca0c95abd8b2820d75f8930fb04073600d42
