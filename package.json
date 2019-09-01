@@ -1,0 +1,27 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "truf": "truffle",
+    "dev": "lite-server",
+    "testall": "truffle test",
+    "test721": "truffle test ./eth-contracts/test/TestERC721Mintable.js",
+    "testsqver": "truffle test ./eth-contracts/test/TestSquareVerifier.js",
+    "testsolnver": "truffle test ./eth-contracts/test/TestSolnSquareVerifier.js",
+    "rinkebymigrate":"truffle migrate --reset --network rinkeby"
+  },
+  "keywords": [],
+  "author": "pk <pkrasam@gmail.com> (https://ipfs.infura.io/ipfs/QmSXiR9Khm3yo1J67nUopvVBxFJ8YGN2fUGZ34Etr3m92x/)",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "2.4.0"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "^2.2.0",
+    "solc": "^0.5.2",
+    "solc-js": "^0.5.2",
+    "truffle": "^5.0.33"
+  }
+}
