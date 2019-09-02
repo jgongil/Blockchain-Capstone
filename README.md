@@ -41,6 +41,7 @@ Contract´s ABI can be found in [documents](./documents)
 
 - 10 tokens were minted through https://vintage.myetherwallet.com/#contracts with contract __SolnSquareVerifier__ with TokenId: 19841, 19842, ... , 198410.
 - 10 more tokens were minted using the mint.js by OpenSea. https://github.com/ProjectOpenSea/opensea-creatures with TokenId: 1-10.  (More info on how to use this script in this [section](#How-to-use-mint.js-by-OpenSea))
+- Only tokens 1-5 have metadata available so far.
 - [List](https://rinkeby.etherscan.io/token/0xa686653f769e37576ea7993ab0778690d90fcc34?a=0x09c9d084de851c2f8b08fff5cee78c5cb3ace338) of mint operations by owner and holder. 
 
 ## OpenSea market place
