@@ -39,10 +39,9 @@ Contract´s ABI can be found in [documents](./documents)
 
 ## Minting
 
-- We opted for https://vintage.myetherwallet.com/#contracts with contract __SolnSquareVerifier__ 
-- 10 Tokens were minted with TokenId: 19841, 19842, ... , 198410
+- I minted 10 tokens for https://vintage.myetherwallet.com/#contracts with contract __SolnSquareVerifier__ with TokenId: 19841, 19842, ... , 198410.
+- I also used the mint.js by OpenSea. https://github.com/ProjectOpenSea/opensea-creatures and minted 10 more tokens with TokenId: 1-10.  (More info on how to use this script [here](# How to use mint.js by OpenSea))
 - [List](https://rinkeby.etherscan.io/token/0xa686653f769e37576ea7993ab0778690d90fcc34?a=0x09c9d084de851c2f8b08fff5cee78c5cb3ace338) of mint operations by token holder (myself so far). 
-- Other mint option could be using mint.js by OpenSea.
 
 ## OpenSea market place
 
@@ -53,9 +52,30 @@ Find [Platinum Market](https://rinkeby.opensea.io/assets/platinum) in OpenSea fo
 - 5 tokens were listed by 0x09C9D084De851c2f8B08FfF5CEe78c5Cb3acE338: 198410, 19849, 19848, 19847, 19846
 - 0x6b002BfD1506c022786A36B3deB0dAeF1fe1CfcA bought the aforementioned tokens. Check [here](https://rinkeby.etherscan.io/token/0xa686653f769e37576ea7993ab0778690d90fcc34?a=0x6b002bfd1506c022786a36b3deb0daef1fe1cfca) the balance of this account.
 
+## How to use mint.js by OpenSea
+
+In this project, the script was only used for minting new tokens with the following steps:
+
+1. Clone the project from https://github.com/ProjectOpenSea/opensea-creatures
+2. Set environment variables used by the script.
+```
+npm install
+export INFURA_KEY="your Infura project Id"
+export MNEMONIC="contract´s owner account mnemonic"
+export OWNER_ADDRESS="contract´s owner address"
+export NFT_CONTRACT_ADDRESS="NFT contract address which will be used for minting"
+export NETWORK="rinkeby"
+```
+3. Open mint.js and add you contract´s abi under NFT_ABI constant.
+4. In mint.js main function, check your contract´s mint function __name__ and __parameters__ under the NFT_CONTRACT_ADDRESS clause.
+5. Set the NUM_CREATURES constant at the begining of the script with the number of tokens you want to mint.
+6. run ``node scripts/mint.js`` and enjoy.
+
+
 ## Contract Classes
 
 ![](./documents/Capstone_Classes.png)
+
 
 # Project Resources
 
