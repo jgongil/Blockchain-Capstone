@@ -25,8 +25,9 @@ contract('SolnSquareVerifier', accounts => {
 
             let result = await this.contract.addSolution(proof.a,proof.b,proof.c,proof.inputs,{from: account_two});
             //console.log(result);
-            console.log("event emitted: ", result.logs[0].event);
+            console.log("Event emitted when adding solution: ", result.logs[0].event);
 
+            // Checks if we can re-add the same solution
             let readded = false;
             try{
                 await this.contract.addSolution(proof.a,proof.b,proof.c,proof.inputs,{from: account_two});
@@ -34,7 +35,8 @@ contract('SolnSquareVerifier', accounts => {
             }catch(e){
                 readded = false;
             }
-            console.log("Can readd existing solution?: ", readded);
+            assert.equal(readded,false,"It could re-add an existing solution");
+           
         });
 
         // Test if an ERC721 token can be minted for contract - SolnSquareVerifier
@@ -43,9 +45,8 @@ contract('SolnSquareVerifier', accounts => {
             try{
                 let result = await this.contract.secureMint(account_two,tokenId1,proof.a,proof.b,proof.c,proof.inputs,{from: account_one});
                 minted = true;
-                console.log("event emitted: ", result.logs[0].event);
+                console.log("Event emitted during minting: ", result.logs[0].event);
             } catch(e){
-                console.log("Error while minting " + e);
                 minted = false;
             }
             assert.equal(minted,false,"Could mint without providing proof");
@@ -57,7 +58,7 @@ contract('SolnSquareVerifier', accounts => {
             try{
                 await this.contract.addSolution(proof.a,proof.b,proof.c,proof.inputs,{from: account_two});
                 let result = await this.contract.secureMint(account_two,tokenId1,proof.a,proof.b,proof.c,proof.inputs,{from: account_one});
-                console.log("event emitted: ", result.logs[0].event);
+                console.log("Event emitted during minting: ", result.logs[0].event);
                 minted = true;
             } catch(e){
                 console.log("Error while minting " + e);
@@ -72,10 +73,9 @@ contract('SolnSquareVerifier', accounts => {
                 await this.contract.addSolution(proof.a,proof.b,proof.c,proof.inputs,{from: account_two});
                 // account_three tries to mint with account_two proof
                 let result = await this.contract.secureMint(account_three,tokenId1,proof.a,proof.b,proof.c,proof.inputs,{from: account_one});
-                console.log("event emitted: ", result.logs[0].event);
+                console.log("Event while minting: ", result.logs[0].event);
                 minted = true;
             } catch(e){
-                console.log("Error while minting " + e);
                 minted = false;
             }
             assert.equal(minted,false,"Could mint with other´s proof");   
